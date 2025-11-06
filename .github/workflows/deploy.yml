@@ -18,7 +18,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: "william"
+          username: "ec2-user"
           port: 22
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "./Dockerfile, ./app.py, ./requirements.txt"
@@ -28,7 +28,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: "william"
+          username: "ec2-user"
           port: 22
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
